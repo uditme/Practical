@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+void findAverage(int *arr, int size, float *avgPtr) {
+    int sum = 0;
+    
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    
+    *avgPtr = (float)sum / size;
+}
+
+int main() {
+    int size;
+    
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    
+    int arr[size];
+    
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    float average;
+    float *avgPtr = &average;
+    
+    findAverage(arr, size, avgPtr);
+    
+    printf("The average of the array elements is: %.2f\n", average);
+    
+    return 0;
+}
