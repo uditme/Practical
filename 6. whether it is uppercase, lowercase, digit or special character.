@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i = 0;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    while (str[i] != '\0') {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            printf("%c is an uppercase character.\n", str[i]);
+        } else if (str[i] >= 'a' && str[i] <= 'z') {
+            printf("%c is a lowercase character.\n", str[i]);
+        } else if (str[i] >= '0' && str[i] <= '9') {
+            printf("%c is a digit.\n", str[i]);
+        } else {
+            printf("%c is a special character.\n", str[i]);
+        }
+        i++;
+    }
+
+    return 0;
+}
