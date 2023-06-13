@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+void reverseString(char *str) {
+    int length = 0;
+    char *temp = str;
+    while (*temp != '\0') {
+        length++;
+        temp++;
+    }
+
+    char *start = str;
+    char *end = str + length - 1;
+
+    while (start < end) {
+     
+        char temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+
+    if (str[strlen(str) - 1] == '\n') {
+        str[strlen(str) - 1] = '\0';
+    }
+
+    reverseString(str);
+    printf("Reversed string: %s\n", str);
+
+    return 0;
+}
